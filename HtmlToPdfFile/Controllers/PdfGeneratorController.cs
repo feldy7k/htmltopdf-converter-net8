@@ -74,7 +74,7 @@ namespace HtmlToPdfFile.Controllers
                         Orientation = Orientation.Portrait,
                         PaperSize = PaperKind.A4,
                         Margins = new MarginSettings { Top = 10, Bottom = 10, Left = 10, Right = 10 },
-                        Out = outputPdfPath + "form" + datename + ".pdf" // Output path
+                        Out = $"{outputPdfPath}form{datename}.pdf" // Output path
                     },
                     Objects = { new ObjectSettings { HtmlContent = htmlContent } }
                 };
@@ -83,7 +83,7 @@ namespace HtmlToPdfFile.Controllers
                 byte[] pdfBytes = _converter.Convert(doc);
 
                 // log the result
-                _logger.LogInformation($"PDF saved to {outputPdfPath + "form" + datename + ".pdf"}");
+                _logger.LogInformation($"PDF saved to {$"{outputPdfPath}form{datename}.pdf"}");
                 _logger.LogInformation($"GeneratePdf: success generate pdf file. Parameters: {jsonRequest}");
 
                 return Ok(new { Status = "Ok", Message = $"GeneratePdf: success generate pdf file", Parameters = $"{jsonRequest}" });
