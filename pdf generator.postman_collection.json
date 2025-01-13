@@ -1,0 +1,39 @@
+{
+	"info": {
+		"_postman_id": "99e51d8a-5c58-463e-9559-25c87179111a",
+		"name": "pdf generator",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32941869"
+	},
+	"item": [
+		{
+			"name": "/generate_pdf",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Robert Doe\",\r\n    \"email\":\"robert.doe@gmail.com\",\r\n    \"mobile_phone\":\"+18245457475\",\r\n    \"date_of_birth\":\"26-Feb-1994\",\r\n    \"occupation\":\"Software Engineer\",\r\n    \"gender\":\"Male\",\r\n    \"address\":\"238, John Street, Chicago, USA\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7234/pdf_generator/generate_pdf",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7234",
+					"path": [
+						"pdf_generator",
+						"generate_pdf"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
